@@ -14,9 +14,9 @@ Explore detailed documentation for each of our projects. Each section includes s
 
 Find general procedures, guidelines, and best practices that apply across all projects. This section includes setup guides, coding standards, and other important development processes.
 
-- [**General Procedures**](processes/general/)
+- [**General Procedures**](processes/general/setup-flutter.md)
   - Step-by-step guides for common tasks like setting up projects, authentication, and more.
-- [**Development Processes**](processes/development/)
+- [**Development Processes**](processes/development/code-standards.md)
   - Documentation on our coding standards, version control practices, CI/CD pipelines, and more.
 
 ## 🚀 Getting Started
