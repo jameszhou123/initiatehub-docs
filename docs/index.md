@@ -10,11 +10,6 @@ Our documentation is organized into the following main sections:
 
 Explore detailed documentation for each of our projects. Each section includes setup guides, deployment instructions, and best practices specific to the project.
 
-- [**Websites**](projects/#websites)
-  - Comprehensive guides for all our web-based projects.
-- [**Mobile Apps**](projects/#mobile-apps)
-  - Documentation specific to our mobile applications.
-
 ### Processes
 
 Find general procedures, guidelines, and best practices that apply across all projects. This section includes setup guides, coding standards, and other important development processes.
