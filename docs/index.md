@@ -14,4 +14,4 @@ Explore detailed documentation for each of our projects. Each section includes s
 
 Find general procedures, guidelines, and best practices that apply across all projects. This section includes setup guides, coding standards, and other important development processes.
 
-- [**Firebase Setup Guide for Flutter Projects**](processes/general/firebase-flutte.md)
+- [**Firebase Setup Guide for Flutter Projects**](processes/firebase-flutter.md)
