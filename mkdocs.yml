@@ -1,20 +1,13 @@
 site_name: Initiatehub Documentation
 
 nav:
-      - Home: index.md
-      - About: about.md
-      - Processes:
-              - General:
-                      - New Flutter Project with FireBase: processes/general/firebase-flutter.md
-                      - Authentication: processes/general/authentication.md
-                      - Testing: processes/general/testing.md
-              - Development:
-                      - Code Standards: processes/development/code-standards.md
-                      - Version Control: processes/development/version-control.md
-                      - CI/CD: processes/development/ci-cd.md
+        - Home: index.md
+        - About: about.md
+        - Processes:
+                  - New Flutter Project with Firebase: processes/firebase-flutter.md
 
 theme:
-      name: material
-      features:
-            - navigation.tabs
-            - navigation.sections
+        name: material
+        features:
+                - navigation.tabs
+                - navigation.sections
