@@ -14,23 +14,4 @@ Explore detailed documentation for each of our projects. Each section includes s
 
 Find general procedures, guidelines, and best practices that apply across all projects. This section includes setup guides, coding standards, and other important development processes.
 
-- [**General Procedures**](processes/general/setup-flutter.md)
-  - Step-by-step guides for common tasks like setting up projects, authentication, and more.
-- [**Development Processes**](processes/development/code-standards.md)
-  - Documentation on our coding standards, version control practices, CI/CD pipelines, and more.
-
-## 🚀 Getting Started
-
-To quickly get started with our documentation, choose one of the sections above or use the search bar to find what you need. Whether you are setting up a new project or looking for best practices, this hub is your one-stop destination for all things development at InitiateHub.
-
-## 📌 About This Site
-
-This documentation hub is continuously updated to reflect the latest changes and best practices. If you have any suggestions or feedback, please feel free to contribute or contact us.
-
-## 🤝 Contributing
-
-We welcome contributions! If you notice anything that can be improved or updated, please submit a pull request or open an issue on our [GitHub repository](https://github.com/username/repository).
-
----
-
-Happy documenting, and welcome to InitiateHub!
+- [**Firebase Setup Guide for Flutter Projects**](processes/general/firebase-flutte.md)
