@@ -16,7 +16,7 @@
     
     
       
-        <title>Setup - Initiatehub Documentation</title>
+        <title>Firebase Setup Guide for Flutter Projects - Initiatehub Documentation</title>
       
     
     
@@ -57,6 +57,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#firebase-setup-guide-for-flutter-projects" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -87,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Setup
+              Firebase Setup Guide for Flutter Projects
             
           </span>
         </div>
@@ -198,7 +203,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../processes/general/setup-flutter/" class="md-tabs__link">
+        <a href="../firebase-flutter.md" class="md-tabs__link">
           
   
   Processes
@@ -372,11 +377,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../processes/general/setup-flutter/" class="md-nav__link">
+      <a href="../firebase-flutter.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Setting Up Flutter
+    New Flutter Project with FireBase
   </span>
   
 
@@ -393,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../processes/general/authentication/" class="md-nav__link">
+      <a href="../authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -414,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../processes/general/testing/" class="md-nav__link">
+      <a href="../testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -483,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../processes/development/code-standards/" class="md-nav__link">
+      <a href="../../development/code-standards/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../processes/development/version-control/" class="md-nav__link">
+      <a href="../../development/version-control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -525,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../processes/development/ci-cd/" class="md-nav__link">
+      <a href="../../development/ci-cd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,6 +576,109 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create New Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-firebase-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Firebase Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-android-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Android Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Android Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-appbuildgradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update app/build.gradle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-firebase-console-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Firebase Console Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Firebase Console Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-release-keystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate Release Keystore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-release-keystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Release Keystore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-signing-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Signing Report
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-final-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Final Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -585,9 +693,80 @@
                   
 
 
-  <h1>Setup</h1>
+<h1 id="firebase-setup-guide-for-flutter-projects">Firebase Setup Guide for Flutter Projects</h1>
+<h2 id="1-create-new-project">1. Create New Project</h2>
+<pre><code class="language-bash">flutter create --org com.initiatehub --platforms android,ios,web encyclopedia
+</code></pre>
+<p><strong>Tip:</strong> Always use <code>--org</code> and <code>--platforms</code> when creating a new project.</p>
+<h2 id="2-firebase-configuration">2. Firebase Configuration</h2>
+<ol>
+<li>Run <code>flutterfire configure</code> to create a new project on Firebase.</li>
+<li>Add Firebase plugins:
+   <code>bash
+   flutter pub add firebase_plugin_name1 firebase_plugin_name2 ...</code></li>
+<li>Run <code>flutterfire configure</code> again after adding all plugins.</li>
+</ol>
+<h2 id="3-android-setup">3. Android Setup</h2>
+<h3 id="update-appbuildgradle">Update app/build.gradle</h3>
+<p>Add these dependencies:</p>
+<pre><code class="language-groovy">dependencies {
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:33.2.0')
 
+    // Add the dependencies for Firebase products
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-analytics'
 
+    // For Google Sign-In
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+
+    // Add other Firebase products as needed
+}
+</code></pre>
+<p>Sync the gradle in Android Studio after adding dependencies.</p>
+<h2 id="4-firebase-console-setup">4. Firebase Console Setup</h2>
+<ol>
+<li>Enable password signin and Google sign-in providers.</li>
+<li>Add SHA1 and SHA256 keys for Google Sign-In.</li>
+</ol>
+<h3 id="generate-release-keystore">Generate Release Keystore</h3>
+<p>In the android folder, run:</p>
+<pre><code class="language-bash">keytool -genkey -v -keystore encyclopedia-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias encyclopedia
+</code></pre>
+<h3 id="configure-release-keystore">Configure Release Keystore</h3>
+<p>In app/build.gradle:</p>
+<pre><code class="language-groovy">android {
+    ...
+    signingConfigs {
+        release {
+            keyAlias 'com.initiatehub.encyclopedia'
+            keyPassword 'your-key-password'
+            storeFile file('encyclopedia-release-key.jks')
+            storePassword 'your-keystore-password'
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+}
+</code></pre>
+<h3 id="get-signing-report">Get Signing Report</h3>
+<p>Run in the android folder:</p>
+<pre><code class="language-bash">./gradlew signingReport
+</code></pre>
+<p>Add both debug and release SHA1 and SHA256 to Firebase console project settings.</p>
+<h2 id="5-final-steps">5. Final Steps</h2>
+<ol>
+<li>Run <code>flutterfire configure</code> again to pull all Firebase config changes.</li>
+<li>Copy all auth feature code to the new project.</li>
+</ol>
+<p><strong>Note:</strong> If prompted to upgrade Kotlin version during gradle sync, follow the system instructions.</p>
 
 
 
