@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../..">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>Firebase Setup Guide for Flutter Projects - Initiatehub Documentation</title>
+        <title>New Flutter Project with Firebase - Initiatehub Documentation</title>
       
     
     
@@ -92,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Firebase Setup Guide for Flutter Projects
+              New Flutter Project with Firebase
             
           </span>
         </div>
@@ -176,28 +178,13 @@
         
   
   
-  
-    <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
-        
-  
     
-  
-  About
-
-      </a>
-    </li>
-  
-
-      
-        
-  
   
   
     
     
-      <li class="md-tabs__item">
-        <a href="../firebase-flutter.md" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   Processes
@@ -265,45 +252,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+  
+    
+    
+    
+      
         
-  
-  <span class="md-ellipsis">
-    About
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -314,8 +286,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Processes
           </label>
@@ -325,10 +297,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../firebase-flutter.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    New Flutter Project with Firebase
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -337,6 +329,119 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create New Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-firebase-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Firebase Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-android-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Android Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Android Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-appbuildgradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update app/build.gradle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-firebase-console-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Firebase Console Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Firebase Console Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-release-keystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate Release Keystore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-release-keystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Release Keystore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-signing-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Signing Report
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-final-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Final Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 

@@ -4,6 +4,9 @@ nav:
     - Home: index.md
     - Processes:
           - New Flutter Project with Firebase: processes/firebase-flutter.md
+    - Projects:
+          - Encyclopedia:
+                - Features Wall: projects/encyclopedia/features-wall.md
 
 theme:
     name: material
