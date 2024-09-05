@@ -6,6 +6,7 @@ nav:
           - New Flutter Project with Firebase: processes/firebase-flutter.md
     - Projects:
           - Encyclopedia:
+                - Overview: projects/encyclopedia/index.md
                 - Features Wall: projects/encyclopedia/features-wall.md
 
 theme:
