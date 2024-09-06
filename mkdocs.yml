@@ -1,16 +1,17 @@
 site_name: Initiatehub Documentation
 
 nav:
-    - Home: index.md
-    - Processes:
-          - New Flutter Project with Firebase: processes/firebase-flutter.md
-    - Projects:
-          - Encyclopedia:
-                - Overview: projects/encyclopedia/index.md
-                - Features Wall: projects/encyclopedia/features-wall.md
+      - Home: index.md
+      - Flutter:
+              - Project Structure: flutter/project-structure.md
+              - New Project with Firebase: flutter/new-project-with-firebase.md
+      - Projects:
+              - Encyclopedia:
+                      - Overview: projects/encyclopedia/index.md
+                      - Features Wall: projects/encyclopedia/features-wall.md
 
 theme:
-    name: material
-    features:
-        - navigation.tabs
-        - navigation.sections
+      name: material
+      features:
+            - navigation.tabs
+            - navigation.sections
