@@ -49,35 +49,41 @@ lib/
 
 ## Expanded Explanation of the Structure
 
-### core/
+### _core/_
 
-- **Purpose**: Acts as the backbone of the application, containing critical elements such as global configurations, constants, and utilities that are essential for the overall setup and operation of the app.
-- **Contents**:
-  - **Configuration Files**: These files, like `config.dart`, define environment-specific settings that influence how the app behaves across different environments (development, staging, production).
-  - **Constants**: Files like `constants.dart` hold static values such as colors, padding, and font sizes used throughout the app, promoting consistency and easy modifications.
-  - **Utilities**: Utility files provide helper functions that can be used across the app, improving code reusability and reducing redundancy.
+**Purpose**: Acts as the backbone of the application, containing critical elements such as global configurations, constants, and utilities that are essential for the overall setup and operation of the app.
 
-### shared/
+**Contents**:
+
+- **Configuration Files**: These files, like `config.dart`, define environment-specific settings that influence how the app behaves across different environments (development, staging, production).
+- **Constants**: Files like `constants.dart` hold static values such as colors, padding, and font sizes used throughout the app, promoting consistency and easy modifications.
+- **Utilities**: Utility files provide helper functions that can be used across the app, improving code reusability and reducing redundancy.
+
+### _shared/_
 
 - **Purpose**: Focuses on reusable UI components and design elements that can be utilized across various parts of the app, ensuring a consistent look and feel.
 - **Contents**:
   - **Widgets**: Contains reusable components like buttons, cards, and loading spinners that are commonly used throughout the app's UI. By centralizing these widgets, changes can be made in one place and automatically reflected wherever these components are used.
 
-### features/
+### _features/_
 
-- **Purpose**: Organizes the code into self-contained modules, each representing a distinct feature or functionality of the app, such as authentication or home screens. This modular approach simplifies development, testing, and maintenance by isolating features.
-- **Contents**:
-  - **Models**: Defines data structures related to the feature, such as `user_model.dart` for user data in the authentication feature.
-  - **Providers**: Contains state management classes specific to the feature, such as `auth_provider.dart`, to handle state and business logic.
-  - **Screens**: Includes the UI screens for the feature, such as `login_screen.dart` and `signup_screen.dart`, ensuring that the feature's UI components are kept together.
-  - **Services**: Implements feature-specific services, like API interactions in `auth_service.dart`, keeping the feature's logic encapsulated.
-  - **Utils**: Houses utility functions specific to the feature, enhancing modularity and reusability within that context.
+**Purpose**: Organizes the code into self-contained modules, each representing a distinct feature or functionality of the app, such as authentication or home screens. This modular approach simplifies development, testing, and maintenance by isolating features.
 
-### startup/
+**Contents**:
 
-- **Purpose**: Manages the application's startup process, including the initialization of providers and setting up routing, ensuring a clean and organized launch sequence.
-- **Contents**:
-  - **App Providers**: Sets up global state management, such as configuring providers for dependency injection.
-  - **App Router**: Defines the navigation structure, handling route configuration and navigation logic to keep routing centralized and manageable.
+- **Models**: Defines data structures related to the feature, such as `user_model.dart` for user data in the authentication feature.
+- **Providers**: Contains state management classes specific to the feature, such as `auth_provider.dart`, to handle state and business logic.
+- **Screens**: Includes the UI screens for the feature, such as `login_screen.dart` and `signup_screen.dart`, ensuring that the feature's UI components are kept together.
+- **Services**: Implements feature-specific services, like API interactions in `auth_service.dart`, keeping the feature's logic encapsulated.
+- **Utils**: Houses utility functions specific to the feature, enhancing modularity and reusability within that context.
+
+### _startup/_
+
+**Purpose**: Manages the application's startup process, including the initialization of providers and setting up routing, ensuring a clean and organized launch sequence.
+
+**Contents**:
+
+- **App Providers**: Sets up global state management, such as configuring providers for dependency injection.
+- **App Router**: Defines the navigation structure, handling route configuration and navigation logic to keep routing centralized and manageable.
 
 This structured approach helps maintain a clean, scalable, and organized codebase, making it easier to collaborate, extend functionality, and maintain the application over time.
