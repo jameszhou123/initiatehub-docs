@@ -13,7 +13,7 @@ nav:
                             - Features Wall: projects/encyclopedia/features-wall.md
 
 theme:
-        name: material
+        name: mkdocs
         highlightjs: true
         hljs_languages:
                 - yaml
