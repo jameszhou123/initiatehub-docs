@@ -61,31 +61,31 @@ In this step, we will first create the Strapi Docker image using a Dockerfile, t
 
    - Ensure that your Dockerfile is properly set up in the root of your Strapi project. Here’s an example Dockerfile:
 
-     ```yaml
-     # Use Node.js 20 as the base image
-     FROM node:20
+   ```Dockerfile
+    # Use Node.js 20 as the base image
+    FROM node:20
 
-     # Set the working directory inside the container
-     WORKDIR /app
+    # Set the working directory inside the container
+    WORKDIR /app
 
-     # Copy package.json and package-lock.json first for caching layer
-     COPY package*.json ./
+    # Copy package.json and package-lock.json first for caching layer
+    COPY package*.json ./
 
-     # Install dependencies
-     RUN npm install
+    # Install dependencies
+    RUN npm install
 
-     # Copy the rest of the application code
-     COPY . .
+    # Copy the rest of the application code
+    COPY . .
 
-     # Build the Strapi application
-     RUN npm run build
+    # Build the Strapi application
+    RUN npm run build
 
-     # Expose the port Strapi will run on
-     EXPOSE 1337
+    # Expose the port Strapi will run on
+    EXPOSE 1337
 
-     # Start the Strapi application
-     CMD ["npm", "run", "start"]
-     ```
+    # Start the Strapi application
+    CMD ["npm", "run", "start"]
+   ```
 
 3. **Build the Docker Image:**
    - Run the following command to build the Docker image from the Dockerfile:
