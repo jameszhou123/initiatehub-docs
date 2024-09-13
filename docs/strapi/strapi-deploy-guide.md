@@ -1,0 +1,244 @@
+# Deploying Strapi with PostgreSQL on a VPS Using Docker Compose
+
+This guide outlines the steps to deploy a Strapi application with PostgreSQL on a VPS using Docker Compose. We'll cover setting up your environment, pushing the Docker image to Docker Hub, and deploying on your VPS.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+1. **Access to Your VPS:**
+
+   - Ensure you have SSH access to your VPS with your user credentials and IP address.
+
+2. **Connecting to the VPS Using SSH:**
+
+   - Use the following command to connect to your VPS. Replace `user` with your VPS username and `your_vps_ip` with the IP address of your VPS:
+     ```bash
+     ssh user@your_vps_ip
+     ```
+
+3. **Install Docker on Your VPS:**
+
+   - After connecting to your VPS, install Docker by running:
+     ```bash
+     curl -fsSL https://get.docker.com -o get-docker.sh
+     sudo sh get-docker.sh
+     ```
+   - This script will automatically install the latest version of Docker on your VPS.
+
+4. **Install Docker Compose:**
+
+   - Install Docker Compose using the following command:
+     ```bash
+     sudo apt-get install docker-compose -y
+     ```
+   - This command installs Docker Compose, which is required to manage multi-container Docker applications like Strapi with PostgreSQL.
+
+5. **Verify Installations:**
+   - Check Docker version to ensure it's installed correctly:
+     ```bash
+     docker --version
+     ```
+   - Check Docker Compose version:
+     ```bash
+     docker-compose --version
+     ```
+
+## Step 1: Create and Push Docker Image to Docker Hub
+
+In this step, we will first create the Strapi Docker image using a Dockerfile, then push the image to a private Docker Hub repository.
+
+### **1.1: Create the Strapi Docker Image Using a Dockerfile**
+
+1. **Navigate to Your Strapi Project Directory:**
+
+   - Open your terminal and navigate to the root of your Strapi project where your Dockerfile is located:
+     ```bash
+     cd /path/to/your-strapi-project
+     ```
+
+2. **Create a Dockerfile in the Root of Your Project:**
+
+   - Ensure that your Dockerfile is properly set up in the root of your Strapi project. Here’s an example Dockerfile:
+
+     ```Dockerfile
+     # Use Node.js 20 as the base image
+     FROM node:20
+
+     # Set the working directory inside the container
+     WORKDIR /app
+
+     # Copy package.json and package-lock.json first for caching layer
+     COPY package*.json ./
+
+     # Install dependencies
+     RUN npm install
+
+     # Copy the rest of the application code
+     COPY . .
+
+     # Build the Strapi application
+     RUN npm run build
+
+     # Expose the port Strapi will run on
+     EXPOSE 1337
+
+     # Start the Strapi application
+     CMD ["npm", "run", "start"]
+     ```
+
+3. **Build the Docker Image:**
+   - Run the following command to build the Docker image from the Dockerfile:
+     ```bash
+     docker build -t your-dockerhub-username/strapi-app:latest .
+     ```
+   - This command builds the Docker image and tags it as `your-dockerhub-username/strapi-app:latest`. Adjust the tag name according to your preference.
+
+### **1.2: Push Docker Image to Docker Hub**
+
+1. **Log in to Docker Hub:**
+
+   - Use the following command to log in to Docker Hub:
+     ```bash
+     docker login
+     ```
+   - Enter your Docker Hub username and password when prompted.
+
+2. **Create a Private Repository on Docker Hub:**
+
+   - Go to [Docker Hub](https://hub.docker.com/) and log in to your account.
+   - Click on the “Repositories” tab and then click “Create Repository.”
+   - Set the repository name (e.g., `strapi-app`), ensure the "Private" option is selected, and click "Create."
+
+3. **Tag Your Docker Image for Docker Hub:**
+
+   - Tag your locally built Docker image to match your Docker Hub repository:
+     ```bash
+     docker tag your-dockerhub-username/strapi-app:latest your-dockerhub-username/strapi-app:latest
+     ```
+   - Replace `your-dockerhub-username` with your actual Docker Hub username.
+
+4. **Push the Image to Docker Hub:**
+   - Push the tagged image to your private repository on Docker Hub:
+     ```bash
+     docker push your-dockerhub-username/strapi-app:latest
+     ```
+
+## Step 2: Prepare Your VPS
+
+1. Connect to your VPS:
+
+   ```bash
+   ssh user@your_vps_ip
+   ```
+
+   Replace `user` with your VPS username and `your_vps_ip` with the IP address of your VPS.
+
+2. Install Docker and Docker Compose:
+
+   ```bash
+   # Install Docker
+   curl -fsSL https://get.docker.com -o get-docker.sh
+   sudo sh get-docker.sh
+
+   # Install Docker Compose
+   sudo apt-get install docker-compose -y
+   ```
+
+3. Create a directory for your project:
+
+   ```bash
+   sudo mkdir -p /srv/strapi
+   sudo chown $USER:$USER /srv/strapi
+   cd /srv/strapi
+   ```
+
+## Step 3: Update `.env` File
+
+Ensure your `.env` file contains the correct environment variables:
+
+```env
+HOST=0.0.0.0
+PORT=1337
+APP_KEYS= # Auto generated by strapi
+API_TOKEN_SALT= # Auto generated by strapi
+ADMIN_JWT_SECRET= # Auto generated by strapi
+TRANSFER_TOKEN_SALT= # Auto generated by strapi
+JWT_SECRET= # Auto generated by strapi
+DATABASE_CLIENT=postgres
+DATABASE_HOST=postgres
+DATABASE_PORT=5432
+DATABASE_NAME=strapi_db
+DATABASE_USERNAME=strapi_user
+DATABASE_PASSWORD=your_password # Replace with your actual password
+DATABASE_SSL=false
+NODE_ENV=production
+```
+
+## Step 4: Create and Configure Docker Compose File
+
+Ensure your `docker-compose.yml` is configured as follows:
+
+```yaml
+services:
+  strapi:
+    image: your-dockerhub-username/strapi-app:latest # Replace with your actual image name
+    container_name: strapi-app
+    env_file:
+      - .env # Load environment variables from the .env file
+    ports:
+      - "1337:1337" # Map host port 1337 to container port 1337
+    depends_on:
+      - postgres # Ensures the postgres service is started before strapi
+    volumes:
+      - ./uploads:/app/public/uploads # Persist media uploads to the host
+
+  postgres:
+    image: postgres:16.4
+    container_name: strapi-postgres
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME} # Use variables from .env
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data # Persist PostgreSQL data to the host
+    ports:
+      - "5432:5432" # Map host port 5432 to container port 5432
+```
+
+## Step 5: Copy Your Docker Compose and `.env` Files to the VPS:
+
+**Open a New Terminal on Your Local Machine:**
+
+In a new terminal on your local machine (not the VPS), use the `scp` command to copy the necessary files to your VPS:
+
+```bash
+scp docker-compose.yml .env user@your_vps_ip:/srv/strapi
+```
+
+## Step 6: Deploy Strapi with Docker Compose
+
+1. Start the Docker Compose services:
+
+   ```bash
+   cd /srv/strapi
+   docker-compose up -d
+   ```
+
+2. Verify the deployment:
+
+   - Check the status of the containers:
+
+     ```bash
+     docker-compose ps
+     ```
+
+   - View logs to ensure everything is running correctly:
+
+     ```bash
+     docker-compose logs -f
+     ```
+
+3. Access Strapi:
+
+   - Open your browser and go to `http://your_vps_ip:1337/admin` to access the Strapi admin panel.
