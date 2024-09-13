@@ -13,7 +13,7 @@ nav:
                             - Features Wall: projects/encyclopedia/features-wall.md
 
 theme:
-        name: readthedocs
+        name: cosmo
         highlightjs: true
         user_color_mode_toggle: true
         hljs_languages:
