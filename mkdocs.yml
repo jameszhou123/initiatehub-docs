@@ -1,22 +1,29 @@
-site_name: Initiatehub Documentation
-
+site_name: Initiatehub
 nav:
         - Home: index.md
+        - Projects:
+                  - Encyclopedia:
+                            - Overview: projects/encyclopedia/index.md
+                            - Features Wall: projects/encyclopedia/features-wall.md
         - Flutter:
                   - Project Structure: flutter/project-structure.md
                   - New Project with Firebase: flutter/new-project-with-firebase.md
         - Strapi:
                   - Deploy Guide: strapi/strapi-deploy-guide.md
-        - Projects:
-                  - Encyclopedia:
-                            - Overview: projects/encyclopedia/index.md
-                            - Features Wall: projects/encyclopedia/features-wall.md
 
 theme:
-        name: cosmo
+        name: material
+        palette:
+                primary: "teal" # Set the primary color to red
+
         highlightjs: true
-        user_color_mode_toggle: true
         hljs_languages:
                 - yaml
                 - Dockerfile
                 - bash
+
+markdown_extensions:
+        - codehilite:
+                  guess_lang: false # Prevents automatic guessing of language, rely on specified language
+                  linenums: true # Optional: adds line numbers to code blocks
+        - pymdownx.superfences # Enhances code block handling

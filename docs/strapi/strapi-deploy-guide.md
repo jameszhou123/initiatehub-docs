@@ -1,157 +1,174 @@
-# Deploying Strapi with PostgreSQL on a VPS Using Docker Compose
+# Deploying Strapi Using Docker Compose
 
-This guide outlines the steps to deploy a Strapi application with PostgreSQL on a VPS using Docker Compose. We'll cover setting up your environment, pushing the Docker image to Docker Hub, and deploying on your VPS.
+This guide outlines the steps to deploy a Strapi application with PostgreSQL on a VPS using Docker Compose. Follow these instructions to set up your environment, create and push the Docker image to Docker Hub, and deploy on your VPS.
 
 ## Prerequisites
 
 Before you begin, ensure you have:
 
-1. **Access to Your VPS:**
+**Access to Your VPS:**
 
-   - Ensure you have SSH access to your VPS with your user credentials and IP address.
+Ensure you have SSH access to your VPS with your user credentials and IP address.
 
-2. **Connecting to the VPS Using SSH:**
+**Connect to the VPS Using SSH:**
 
-   - Use the following command to connect to your VPS. Replace `user` with your VPS username and `your_vps_ip` with the IP address of your VPS:
-     ```bash
-     ssh user@your_vps_ip
-     ```
+Use the following command to connect to your VPS. Replace `user` with your VPS username and `your_vps_ip` with the IP address of your VPS:
 
-3. **Install Docker on Your VPS:**
+```bash
+ssh user@your_vps_ip
+```
 
-   - After connecting to your VPS, install Docker by running:
-     ```bash
-     curl -fsSL https://get.docker.com -o get-docker.sh
-     sudo sh get-docker.sh
-     ```
-   - This script will automatically install the latest version of Docker on your VPS.
+**Install Docker on Your VPS:**
 
-4. **Install Docker Compose:**
+After connected to your VPS, install Docker by running:
 
-   - Install Docker Compose using the following command:
-     ```bash
-     sudo apt-get install docker-compose -y
-     ```
-   - This command installs Docker Compose, which is required to manage multi-container Docker applications like Strapi with PostgreSQL.
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
 
-5. **Verify Installations:**
-   - Check Docker version to ensure it's installed correctly:
-     ```bash
-     docker --version
-     ```
-   - Check Docker Compose version:
-     ```bash
-     docker-compose --version
-     ```
+**Install Docker Compose:**
+
+Install Docker Compose using the following command:
+
+```bash
+sudo apt-get install docker-compose -y
+```
+
+**Verify Installations:**
+
+Check Docker version to ensure it's installed correctly:
+
+```bash
+docker --version
+```
+
+Check Docker Compose version:
+
+```bash
+docker-compose --version
+```
 
 ## Step 1: Create and Push Docker Image to Docker Hub
 
-In this step, we will first create the Strapi Docker image using a Dockerfile, then push the image to a private Docker Hub repository.
+In this step, you will perform the following tasks on your local machine: create the Strapi Docker image using a Dockerfile, and then push the image to a private Docker Hub repository.
 
 ### **1.1: Create the Strapi Docker Image Using a Dockerfile**
 
-1. **Navigate to Your Strapi Project Directory:**
+**Navigate to Your Strapi Project Directory:**
 
-   - Open your terminal and navigate to the root of your Strapi project where your Dockerfile is located:
-     ```bash
-     cd /path/to/your-strapi-project
-     ```
+Open your terminal and navigate to the root of your Strapi project where your Dockerfile is located:
 
-2. **Create a Dockerfile in the Root of Your Project:**
+```bash
+cd /path/to/your-strapi-project
+```
 
-   - Ensure that your Dockerfile is properly set up in the root of your Strapi project. Here’s an example Dockerfile:
+**Create a Dockerfile in the Root of Your Project:**
 
-   ```Dockerfile
-    # Use Node.js 20 as the base image
-    FROM node:20
+Ensure that your Dockerfile is properly set up in the root of your Strapi project. Here’s an example Dockerfile:
 
-    # Set the working directory inside the container
-    WORKDIR /app
+```Dockerfile
+  # Use Node.js 20 as the base image
+  FROM node:20
 
-    # Copy package.json and package-lock.json first for caching layer
-    COPY package*.json ./
+  # Set the working directory inside the container
+  WORKDIR /app
 
-    # Install dependencies
-    RUN npm install
+  # Copy package.json and package-lock.json first for caching layer
+  COPY package*.json ./
 
-    # Copy the rest of the application code
-    COPY . .
+  # Install dependencies
+  RUN npm install
 
-    # Build the Strapi application
-    RUN npm run build
+  # Copy the rest of the application code
+  COPY . .
 
-    # Expose the port Strapi will run on
-    EXPOSE 1337
+  # Build the Strapi application
+  RUN npm run build
 
-    # Start the Strapi application
-    CMD ["npm", "run", "start"]
-   ```
+  # Expose the port Strapi will run on
+  EXPOSE 1337
 
-3. **Build the Docker Image:**
-   - Run the following command to build the Docker image from the Dockerfile:
-     ```bash
-     docker build -t your-dockerhub-username/strapi-app:latest .
-     ```
-   - This command builds the Docker image and tags it as `your-dockerhub-username/strapi-app:latest`. Adjust the tag name according to your preference.
+  # Start the Strapi application
+  CMD ["npm", "run", "start"]
+```
+
+**Build the Docker Image:**
+
+Run the following command to build the Docker image from the Dockerfile:
+
+```bash
+docker build -t your-dockerhub-username/strapi-app:latest .
+```
+
+This command builds the Docker image and tags it as `your-dockerhub-username/strapi-app:latest`. Adjust the tag name according to your preference.
 
 ### **1.2: Push Docker Image to Docker Hub**
 
-1. **Log in to Docker Hub:**
+**Log in to Docker Hub:**
 
-   - Use the following command to log in to Docker Hub:
-     ```bash
-     docker login
-     ```
-   - Enter your Docker Hub username and password when prompted.
+Use the following command to log in to Docker Hub:
 
-2. **Create a Private Repository on Docker Hub:**
+```bash
+docker login
+```
 
-   - Go to [Docker Hub](https://hub.docker.com/) and log in to your account.
-   - Click on the “Repositories” tab and then click “Create Repository.”
-   - Set the repository name (e.g., `strapi-app`), ensure the "Private" option is selected, and click "Create."
+Enter your Docker Hub username and password when prompted.
 
-3. **Tag Your Docker Image for Docker Hub:**
+**Create a Private Repository on Docker Hub:**
 
-   - Tag your locally built Docker image to match your Docker Hub repository:
-     ```bash
-     docker tag your-dockerhub-username/strapi-app:latest your-dockerhub-username/strapi-app:latest
-     ```
-   - Replace `your-dockerhub-username` with your actual Docker Hub username.
+- Go to [Docker Hub](https://hub.docker.com/) and log in to your account.
 
-4. **Push the Image to Docker Hub:**
-   - Push the tagged image to your private repository on Docker Hub:
-     ```bash
-     docker push your-dockerhub-username/strapi-app:latest
-     ```
+- Click on the “Repositories” tab and then click “Create Repository.”
+
+- Set the repository name (e.g., `strapi-app`), ensure the "Private" option is selected, and click "Create."
+
+**Tag Your Docker Image for Docker Hub:**
+
+Tag your locally built Docker image to match your Docker Hub repository:
+
+```bash
+docker tag your-dockerhub-username/strapi-app:latest your-dockerhub-username/strapi-app:latest
+```
+
+Replace `your-dockerhub-username` with your actual Docker Hub username.
+
+**Push the Image to Docker Hub:**
+
+Push the tagged image to your private repository on Docker Hub:
+
+```bash
+docker push your-dockerhub-username/strapi-app:latest
+```
 
 ## Step 2: Prepare Your VPS
 
-1. Connect to your VPS:
+**Connect to your VPS:**
 
-   ```bash
-   ssh user@your_vps_ip
-   ```
+```bash
+ssh user@your_vps_ip
+```
 
-   Replace `user` with your VPS username and `your_vps_ip` with the IP address of your VPS.
+Replace `user` with your VPS username and `your_vps_ip` with the IP address of your VPS.
 
-2. Install Docker and Docker Compose:
+**Install Docker and Docker Compose:**
 
-   ```bash
-   # Install Docker
-   curl -fsSL https://get.docker.com -o get-docker.sh
-   sudo sh get-docker.sh
+```bash
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 
-   # Install Docker Compose
-   sudo apt-get install docker-compose -y
-   ```
+# Install Docker Compose
+sudo apt-get install docker-compose -y
+```
 
-3. Create a directory for your project:
+**Create a directory for your project:**
 
-   ```bash
-   sudo mkdir -p /srv/strapi
-   sudo chown $USER:$USER /srv/strapi
-   cd /srv/strapi
-   ```
+```bash
+sudo mkdir -p /srv/strapi
+sudo chown $USER:$USER /srv/strapi
+cd /srv/strapi
+```
 
 ## Step 3: Update `.env` File
 
@@ -192,6 +209,7 @@ services:
       - postgres # Ensures the postgres service is started before strapi
     volumes:
       - ./uploads:/app/public/uploads # Persist media uploads to the host
+    restart: unless-stopped # Ensures that Strapi restarts on VPS reboot
 
   postgres:
     image: postgres:16.4
@@ -218,27 +236,27 @@ scp docker-compose.yml .env user@your_vps_ip:/srv/strapi
 
 ## Step 6: Deploy Strapi with Docker Compose
 
-1. Start the Docker Compose services:
+**Start the Docker Compose services:**
 
-   ```bash
-   cd /srv/strapi
-   docker-compose up -d
-   ```
+```bash
+cd /srv/strapi
+docker-compose up -d
+```
 
-2. Verify the deployment:
+**Verify the deployment:**
 
-   - Check the status of the containers:
+Check the status of the containers:
 
-     ```bash
-     docker-compose ps
-     ```
+```bash
+docker-compose ps
+```
 
-   - View logs to ensure everything is running correctly:
+View logs to ensure everything is running correctly:
 
-     ```bash
-     docker-compose logs -f
-     ```
+```bash
+docker-compose logs -f
+```
 
-3. Access Strapi:
+**Access Strapi:**
 
-   - Open your browser and go to `http://your_vps_ip:1337/admin` to access the Strapi admin panel.
+Open your browser and go to `http://your_vps_ip:1337/admin` to access the Strapi admin panel.
