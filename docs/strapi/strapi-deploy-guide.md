@@ -61,7 +61,7 @@ In this step, we will first create the Strapi Docker image using a Dockerfile, t
 
    - Ensure that your Dockerfile is properly set up in the root of your Strapi project. Here’s an example Dockerfile:
 
-     ```Dockerfile
+     ```yaml
      # Use Node.js 20 as the base image
      FROM node:20
 

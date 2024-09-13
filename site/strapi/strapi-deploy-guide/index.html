@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../project-structure/">
+        <link rel="prev" href="../../flutter/new-project-with-firebase/">
       
       
-        <link rel="next" href="../../strapi/strapi-deploy-guide/">
+        <link rel="next" href="../../projects/encyclopedia/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>New Project with Firebase - Initiatehub Documentation</title>
+        <title>Deploy Guide - Initiatehub Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#firebase-setup-guide-for-flutter-projects" class="md-skip">
+        <a href="#deploying-strapi-with-postgresql-on-a-vps-using-docker-compose" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              New Project with Firebase
+              Deploy Guide
             
           </span>
         </div>
@@ -180,13 +180,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../project-structure/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../flutter/project-structure/" class="md-tabs__link">
           
   
   Flutter
@@ -200,11 +198,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../strapi/strapi-deploy-guide/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   Strapi
@@ -299,6 +299,95 @@
       
   
   
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Flutter
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Flutter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/project-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/new-project-with-firebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New Project with Firebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -319,47 +408,26 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Flutter
+    Strapi
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Flutter
+            Strapi
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../project-structure/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Project Structure
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -381,7 +449,7 @@
           
   
   <span class="md-ellipsis">
-    New Project with Firebase
+    Deploy Guide
   </span>
   
 
@@ -392,7 +460,7 @@
         
   
   <span class="md-ellipsis">
-    New Project with Firebase
+    Deploy Guide
   </span>
   
 
@@ -414,37 +482,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-create-new-project" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Create New Project
+      Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-firebase-configuration" class="md-nav__link">
+  <a href="#step-1-create-and-push-docker-image-to-docker-hub" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Firebase Configuration
+      Step 1: Create and Push Docker Image to Docker Hub
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-android-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Android Setup
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Android Setup">
+    <nav class="md-nav" aria-label="Step 1: Create and Push Docker Image to Docker Hub">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#update-appbuildgradle" class="md-nav__link">
+  <a href="#11-create-the-strapi-docker-image-using-a-dockerfile" class="md-nav__link">
     <span class="md-ellipsis">
-      Update app/build.gradle
+      1.1: Create the Strapi Docker Image Using a Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-push-docker-image-to-docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2: Push Docker Image to Docker Hub
     </span>
   </a>
   
@@ -456,51 +524,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-firebase-console-setup" class="md-nav__link">
+  <a href="#step-2-prepare-your-vps" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Firebase Console Setup
+      Step 2: Prepare Your VPS
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. Firebase Console Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#generate-release-keystore" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generate Release Keystore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-release-keystore" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure Release Keystore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-signing-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get Signing Report
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-final-steps" class="md-nav__link">
+  <a href="#step-3-update-env-file" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Final Steps
+      Step 3: Update .env File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-and-configure-docker-compose-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Create and Configure Docker Compose File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-copy-your-docker-compose-and-env-files-to-the-vps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Copy Your Docker Compose and .env Files to the VPS:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-deploy-strapi-with-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Deploy Strapi with Docker Compose
     </span>
   </a>
   
@@ -510,74 +572,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Strapi
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Strapi
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../strapi/strapi-deploy-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Deploy Guide
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -754,37 +748,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-create-new-project" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Create New Project
+      Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-firebase-configuration" class="md-nav__link">
+  <a href="#step-1-create-and-push-docker-image-to-docker-hub" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Firebase Configuration
+      Step 1: Create and Push Docker Image to Docker Hub
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-android-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Android Setup
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Android Setup">
+    <nav class="md-nav" aria-label="Step 1: Create and Push Docker Image to Docker Hub">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#update-appbuildgradle" class="md-nav__link">
+  <a href="#11-create-the-strapi-docker-image-using-a-dockerfile" class="md-nav__link">
     <span class="md-ellipsis">
-      Update app/build.gradle
+      1.1: Create the Strapi Docker Image Using a Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-push-docker-image-to-docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2: Push Docker Image to Docker Hub
     </span>
   </a>
   
@@ -796,51 +790,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-firebase-console-setup" class="md-nav__link">
+  <a href="#step-2-prepare-your-vps" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Firebase Console Setup
+      Step 2: Prepare Your VPS
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. Firebase Console Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#generate-release-keystore" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generate Release Keystore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-release-keystore" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure Release Keystore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-signing-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get Signing Report
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-final-steps" class="md-nav__link">
+  <a href="#step-3-update-env-file" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Final Steps
+      Step 3: Update .env File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-and-configure-docker-compose-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Create and Configure Docker Compose File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-copy-your-docker-compose-and-env-files-to-the-vps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Copy Your Docker Compose and .env Files to the VPS:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-deploy-strapi-with-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Deploy Strapi with Docker Compose
     </span>
   </a>
   
@@ -861,80 +849,245 @@
                   
 
 
-<h1 id="firebase-setup-guide-for-flutter-projects">Firebase Setup Guide for Flutter Projects</h1>
-<h2 id="1-create-new-project">1. Create New Project</h2>
-<pre><code class="language-bash">flutter create --org com.initiatehub --platforms android,ios,web encyclopedia
-</code></pre>
-<p><strong>Tip:</strong> Always use <code>--org</code> and <code>--platforms</code> when creating a new project.</p>
-<h2 id="2-firebase-configuration">2. Firebase Configuration</h2>
+<h1 id="deploying-strapi-with-postgresql-on-a-vps-using-docker-compose">Deploying Strapi with PostgreSQL on a VPS Using Docker Compose</h1>
+<p>This guide outlines the steps to deploy a Strapi application with PostgreSQL on a VPS using Docker Compose. We'll cover setting up your environment, pushing the Docker image to Docker Hub, and deploying on your VPS.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin, ensure you have:</p>
 <ol>
-<li>Run <code>flutterfire configure</code> to create a new project on Firebase.</li>
-<li>Add Firebase plugins:
-   <code>bash
-   flutter pub add firebase_plugin_name1 firebase_plugin_name2 ...</code></li>
-<li>Run <code>flutterfire configure</code> again after adding all plugins.</li>
+<li>
+<p><strong>Access to Your VPS:</strong></p>
+</li>
+<li>
+<p>Ensure you have SSH access to your VPS with your user credentials and IP address.</p>
+</li>
+<li>
+<p><strong>Connecting to the VPS Using SSH:</strong></p>
+</li>
+<li>
+<p>Use the following command to connect to your VPS. Replace <code>user</code> with your VPS username and <code>your_vps_ip</code> with the IP address of your VPS:
+     <code>bash
+     ssh user@your_vps_ip</code></p>
+</li>
+<li>
+<p><strong>Install Docker on Your VPS:</strong></p>
+</li>
+<li>
+<p>After connecting to your VPS, install Docker by running:
+     <code>bash
+     curl -fsSL https://get.docker.com -o get-docker.sh
+     sudo sh get-docker.sh</code></p>
+</li>
+<li>
+<p>This script will automatically install the latest version of Docker on your VPS.</p>
+</li>
+<li>
+<p><strong>Install Docker Compose:</strong></p>
+</li>
+<li>
+<p>Install Docker Compose using the following command:
+     <code>bash
+     sudo apt-get install docker-compose -y</code></p>
+</li>
+<li>
+<p>This command installs Docker Compose, which is required to manage multi-container Docker applications like Strapi with PostgreSQL.</p>
+</li>
+<li>
+<p><strong>Verify Installations:</strong></p>
+</li>
+<li>Check Docker version to ensure it's installed correctly:
+     <code>bash
+     docker --version</code></li>
+<li>Check Docker Compose version:
+     <code>bash
+     docker-compose --version</code></li>
 </ol>
-<h2 id="3-android-setup">3. Android Setup</h2>
-<h3 id="update-appbuildgradle">Update app/build.gradle</h3>
-<p>Add these dependencies:</p>
-<pre><code class="language-groovy">dependencies {
-    // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:33.2.0')
-
-    // Add the dependencies for Firebase products
-    implementation 'com.google.firebase:firebase-auth'
-    implementation 'com.google.firebase:firebase-firestore'
-    implementation 'com.google.firebase:firebase-storage'
-    implementation 'com.google.firebase:firebase-analytics'
-
-    // For Google Sign-In
-    implementation 'com.google.android.gms:play-services-auth:20.7.0'
-
-    // Add other Firebase products as needed
-}
-</code></pre>
-<p>Sync the gradle in Android Studio after adding dependencies.</p>
-<h2 id="4-firebase-console-setup">4. Firebase Console Setup</h2>
+<h2 id="step-1-create-and-push-docker-image-to-docker-hub">Step 1: Create and Push Docker Image to Docker Hub</h2>
+<p>In this step, we will first create the Strapi Docker image using a Dockerfile, then push the image to a private Docker Hub repository.</p>
+<h3 id="11-create-the-strapi-docker-image-using-a-dockerfile"><strong>1.1: Create the Strapi Docker Image Using a Dockerfile</strong></h3>
 <ol>
-<li>Enable password signin and Google sign-in providers.</li>
-<li>Add SHA1 and SHA256 keys for Google Sign-In.</li>
+<li>
+<p><strong>Navigate to Your Strapi Project Directory:</strong></p>
+</li>
+<li>
+<p>Open your terminal and navigate to the root of your Strapi project where your Dockerfile is located:
+     <code>bash
+     cd /path/to/your-strapi-project</code></p>
+</li>
+<li>
+<p><strong>Create a Dockerfile in the Root of Your Project:</strong></p>
+</li>
+<li>
+<p>Ensure that your Dockerfile is properly set up in the root of your Strapi project. Here’s an example Dockerfile:</p>
+<p>```Dockerfile
+ # Use Node.js 20 as the base image
+ FROM node:20</p>
+<p># Set the working directory inside the container
+ WORKDIR /app</p>
+<p># Copy package.json and package-lock.json first for caching layer
+ COPY package*.json ./</p>
+<p># Install dependencies
+ RUN npm install</p>
+<p># Copy the rest of the application code
+ COPY . .</p>
+<p># Build the Strapi application
+ RUN npm run build</p>
+<p># Expose the port Strapi will run on
+ EXPOSE 1337</p>
+<p># Start the Strapi application
+ CMD ["npm", "run", "start"]
+ ```</p>
+</li>
+<li>
+<p><strong>Build the Docker Image:</strong></p>
+</li>
+<li>Run the following command to build the Docker image from the Dockerfile:
+     <code>bash
+     docker build -t your-dockerhub-username/strapi-app:latest .</code></li>
+<li>This command builds the Docker image and tags it as <code>your-dockerhub-username/strapi-app:latest</code>. Adjust the tag name according to your preference.</li>
 </ol>
-<h3 id="generate-release-keystore">Generate Release Keystore</h3>
-<p>In the android folder, run:</p>
-<pre><code class="language-bash">keytool -genkey -v -keystore encyclopedia-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias encyclopedia
-</code></pre>
-<h3 id="configure-release-keystore">Configure Release Keystore</h3>
-<p>In app/build.gradle:</p>
-<pre><code class="language-groovy">android {
-    ...
-    signingConfigs {
-        release {
-            keyAlias 'com.initiatehub.encyclopedia'
-            keyPassword 'your-key-password'
-            storeFile file('encyclopedia-release-key.jks')
-            storePassword 'your-keystore-password'
-        }
-    }
-    buildTypes {
-        release {
-            signingConfig signingConfigs.release
-            minifyEnabled false
-            shrinkResources false
-        }
-    }
-}
-</code></pre>
-<h3 id="get-signing-report">Get Signing Report</h3>
-<p>Run in the android folder:</p>
-<pre><code class="language-bash">./gradlew signingReport
-</code></pre>
-<p>Add both debug and release SHA1 and SHA256 to Firebase console project settings.</p>
-<h2 id="5-final-steps">5. Final Steps</h2>
+<h3 id="12-push-docker-image-to-docker-hub"><strong>1.2: Push Docker Image to Docker Hub</strong></h3>
 <ol>
-<li>Run <code>flutterfire configure</code> again to pull all Firebase config changes.</li>
-<li>Copy all auth feature code to the new project.</li>
+<li>
+<p><strong>Log in to Docker Hub:</strong></p>
+</li>
+<li>
+<p>Use the following command to log in to Docker Hub:
+     <code>bash
+     docker login</code></p>
+</li>
+<li>
+<p>Enter your Docker Hub username and password when prompted.</p>
+</li>
+<li>
+<p><strong>Create a Private Repository on Docker Hub:</strong></p>
+</li>
+<li>
+<p>Go to <a href="https://hub.docker.com/">Docker Hub</a> and log in to your account.</p>
+</li>
+<li>Click on the “Repositories” tab and then click “Create Repository.”</li>
+<li>
+<p>Set the repository name (e.g., <code>strapi-app</code>), ensure the "Private" option is selected, and click "Create."</p>
+</li>
+<li>
+<p><strong>Tag Your Docker Image for Docker Hub:</strong></p>
+</li>
+<li>
+<p>Tag your locally built Docker image to match your Docker Hub repository:
+     <code>bash
+     docker tag your-dockerhub-username/strapi-app:latest your-dockerhub-username/strapi-app:latest</code></p>
+</li>
+<li>
+<p>Replace <code>your-dockerhub-username</code> with your actual Docker Hub username.</p>
+</li>
+<li>
+<p><strong>Push the Image to Docker Hub:</strong></p>
+</li>
+<li>Push the tagged image to your private repository on Docker Hub:
+     <code>bash
+     docker push your-dockerhub-username/strapi-app:latest</code></li>
 </ol>
-<p><strong>Note:</strong> If prompted to upgrade Kotlin version during gradle sync, follow the system instructions.</p>
+<h2 id="step-2-prepare-your-vps">Step 2: Prepare Your VPS</h2>
+<ol>
+<li>Connect to your VPS:</li>
+</ol>
+<p><code>bash
+   ssh user@your_vps_ip</code></p>
+<p>Replace <code>user</code> with your VPS username and <code>your_vps_ip</code> with the IP address of your VPS.</p>
+<ol>
+<li>Install Docker and Docker Compose:</li>
+</ol>
+<p>```bash
+   # Install Docker
+   curl -fsSL https://get.docker.com -o get-docker.sh
+   sudo sh get-docker.sh</p>
+<p># Install Docker Compose
+   sudo apt-get install docker-compose -y
+   ```</p>
+<ol>
+<li>Create a directory for your project:</li>
+</ol>
+<p><code>bash
+   sudo mkdir -p /srv/strapi
+   sudo chown $USER:$USER /srv/strapi
+   cd /srv/strapi</code></p>
+<h2 id="step-3-update-env-file">Step 3: Update <code>.env</code> File</h2>
+<p>Ensure your <code>.env</code> file contains the correct environment variables:</p>
+<pre><code class="language-env">HOST=0.0.0.0
+PORT=1337
+APP_KEYS= # Auto generated by strapi
+API_TOKEN_SALT= # Auto generated by strapi
+ADMIN_JWT_SECRET= # Auto generated by strapi
+TRANSFER_TOKEN_SALT= # Auto generated by strapi
+JWT_SECRET= # Auto generated by strapi
+DATABASE_CLIENT=postgres
+DATABASE_HOST=postgres
+DATABASE_PORT=5432
+DATABASE_NAME=strapi_db
+DATABASE_USERNAME=strapi_user
+DATABASE_PASSWORD=your_password # Replace with your actual password
+DATABASE_SSL=false
+NODE_ENV=production
+</code></pre>
+<h2 id="step-4-create-and-configure-docker-compose-file">Step 4: Create and Configure Docker Compose File</h2>
+<p>Ensure your <code>docker-compose.yml</code> is configured as follows:</p>
+<pre><code class="language-yaml">services:
+  strapi:
+    image: your-dockerhub-username/strapi-app:latest # Replace with your actual image name
+    container_name: strapi-app
+    env_file:
+      - .env # Load environment variables from the .env file
+    ports:
+      - &quot;1337:1337&quot; # Map host port 1337 to container port 1337
+    depends_on:
+      - postgres # Ensures the postgres service is started before strapi
+    volumes:
+      - ./uploads:/app/public/uploads # Persist media uploads to the host
+
+  postgres:
+    image: postgres:16.4
+    container_name: strapi-postgres
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME} # Use variables from .env
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data # Persist PostgreSQL data to the host
+    ports:
+      - &quot;5432:5432&quot; # Map host port 5432 to container port 5432
+</code></pre>
+<h2 id="step-5-copy-your-docker-compose-and-env-files-to-the-vps">Step 5: Copy Your Docker Compose and <code>.env</code> Files to the VPS:</h2>
+<p><strong>Open a New Terminal on Your Local Machine:</strong></p>
+<p>In a new terminal on your local machine (not the VPS), use the <code>scp</code> command to copy the necessary files to your VPS:</p>
+<pre><code class="language-bash">scp docker-compose.yml .env user@your_vps_ip:/srv/strapi
+</code></pre>
+<h2 id="step-6-deploy-strapi-with-docker-compose">Step 6: Deploy Strapi with Docker Compose</h2>
+<ol>
+<li>Start the Docker Compose services:</li>
+</ol>
+<p><code>bash
+   cd /srv/strapi
+   docker-compose up -d</code></p>
+<ol>
+<li>
+<p>Verify the deployment:</p>
+</li>
+<li>
+<p>Check the status of the containers:</p>
+<p><code>bash
+ docker-compose ps</code></p>
+</li>
+<li>
+<p>View logs to ensure everything is running correctly:</p>
+<p><code>bash
+ docker-compose logs -f</code></p>
+</li>
+<li>
+<p>Access Strapi:</p>
+</li>
+<li>
+<p>Open your browser and go to <code>http://your_vps_ip:1337/admin</code> to access the Strapi admin panel.</p>
+</li>
+</ol>
 
 
 
