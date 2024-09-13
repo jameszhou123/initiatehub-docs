@@ -19,3 +19,4 @@ theme:
         hljs_languages:
                 - yaml
                 - Dockerfile
+                - bash
