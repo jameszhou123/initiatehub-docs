@@ -9,6 +9,11 @@ Find guides and references for projects at InitiateHub, including mobile apps, w
 - [Project Structure](flutter/project-structure.md)
 - [New Project with Firebase](flutter/new-project-with-firebase.md)
 
+### Server
+
+- [Secure VPS Server](server/secure_vps.md)
+- [Nginx Setup](server/nginx.md)
+
 ### Strapi
 
 - [Deploy Guide](strapi/strapi-deploy-guide.md)
