@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../project-structure/">
+        <link rel="prev" href="../secure_vps/">
       
       
-        <link rel="next" href="../../server/secure_vps/">
+        <link rel="next" href="../../strapi/strapi-deploy-guide/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>New Project with Firebase - Initiatehub</title>
+        <title>Nginx Setup - Initiatehub</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#firebase-setup-guide-for-flutter-projects" class="md-skip">
+        <a href="#nginx-reverse-proxy-setup-for-strapi-with-ssl" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              New Project with Firebase
+              Nginx Setup
             
           </span>
         </div>
@@ -343,19 +343,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -369,7 +367,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Flutter
@@ -383,11 +381,97 @@
   
   
     <li class="md-nav__item">
-      <a href="../project-structure/" class="md-nav__link">
+      <a href="../../flutter/project-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Project Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/new-project-with-firebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New Project with Firebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Server
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secure_vps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure VPS Server
   </span>
   
 
@@ -417,7 +501,7 @@
           
   
   <span class="md-ellipsis">
-    New Project with Firebase
+    Nginx Setup
   </span>
   
 
@@ -428,7 +512,7 @@
         
   
   <span class="md-ellipsis">
-    New Project with Firebase
+    Nginx Setup
   </span>
   
 
@@ -450,93 +534,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-create-new-project" class="md-nav__link">
+  <a href="#step-1-configure-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Create New Project
+      Step 1: Configure DNS
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-firebase-configuration" class="md-nav__link">
+  <a href="#step-2-install-nginx-on-your-vps" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Firebase Configuration
+      Step 2: Install Nginx on Your VPS
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-android-setup" class="md-nav__link">
+  <a href="#step-3-configure-nginx-as-a-reverse-proxy-for-strapi" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Android Setup
+      Step 3: Configure Nginx as a Reverse Proxy for Strapi
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. Android Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update-appbuildgradle" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update app/build.gradle
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-firebase-console-setup" class="md-nav__link">
+  <a href="#step-4-obtain-an-ssl-certificate-with-certbot-lets-encrypt" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Firebase Console Setup
+      Step 4: Obtain an SSL Certificate with Certbot (Let's Encrypt)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. Firebase Console Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#generate-release-keystore" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generate Release Keystore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-release-keystore" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure Release Keystore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-signing-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get Signing Report
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-final-steps" class="md-nav__link">
+  <a href="#step-5-set-up-automatic-renewal-of-ssl-certificate" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Final Steps
+      Step 5: Set Up Automatic Renewal of SSL Certificate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
     </span>
   </a>
   
@@ -546,90 +591,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Server
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Server
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../server/secure_vps/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Secure VPS Server
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../server/nginx/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Nginx Setup
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -732,93 +693,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-create-new-project" class="md-nav__link">
+  <a href="#step-1-configure-dns" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Create New Project
+      Step 1: Configure DNS
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-firebase-configuration" class="md-nav__link">
+  <a href="#step-2-install-nginx-on-your-vps" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Firebase Configuration
+      Step 2: Install Nginx on Your VPS
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-android-setup" class="md-nav__link">
+  <a href="#step-3-configure-nginx-as-a-reverse-proxy-for-strapi" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Android Setup
+      Step 3: Configure Nginx as a Reverse Proxy for Strapi
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. Android Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update-appbuildgradle" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update app/build.gradle
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-firebase-console-setup" class="md-nav__link">
+  <a href="#step-4-obtain-an-ssl-certificate-with-certbot-lets-encrypt" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Firebase Console Setup
+      Step 4: Obtain an SSL Certificate with Certbot (Let's Encrypt)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. Firebase Console Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#generate-release-keystore" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generate Release Keystore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-release-keystore" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure Release Keystore
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-signing-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get Signing Report
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-final-steps" class="md-nav__link">
+  <a href="#step-5-set-up-automatic-renewal-of-ssl-certificate" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Final Steps
+      Step 5: Set Up Automatic Renewal of SSL Certificate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
     </span>
   </a>
   
@@ -839,80 +761,96 @@
                   
 
 
-<h1 id="firebase-setup-guide-for-flutter-projects">Firebase Setup Guide for Flutter Projects</h1>
-<h2 id="1-create-new-project">1. Create New Project</h2>
-<div class="highlight"><pre><span></span><code>flutter<span class="w"> </span>create<span class="w"> </span>--org<span class="w"> </span>com.initiatehub<span class="w"> </span>--platforms<span class="w"> </span>android,ios,web<span class="w"> </span>encyclopedia
+<h1 id="nginx-reverse-proxy-setup-for-strapi-with-ssl">Nginx Reverse Proxy Setup for Strapi with SSL</h1>
+<p>This guide provides step-by-step instructions for setting up Nginx as a reverse proxy for your Strapi application with SSL on your subdomain (<code>encyclopedia-cms.initiatehub.com</code>). We'll use Let's Encrypt with Certbot to obtain and manage the SSL certificate.</p>
+<h2 id="step-1-configure-dns">Step 1: Configure DNS</h2>
+<p>Before we begin the server setup, we need to configure the DNS settings for your subdomain.</p>
+<p><strong>Set Up DNS A Record</strong>:</p>
+<ul>
+<li>Go to your domain registrar or DNS provider's control panel.</li>
+<li>Add an <strong>A record</strong> with the following details:</li>
+<li><strong>Name</strong>: <code>encyclopedia-cms</code> (or <code>encyclopedia-cms.initiatehub.com</code>, depending on your provider's format)</li>
+<li><strong>Type</strong>: A</li>
+<li><strong>Value</strong>: IP address of your VPS (e.g., <code>123.456.78.90</code>)</li>
+<li>Save the DNS settings and allow time for propagation (typically a few minutes to a few hours).</li>
+</ul>
+<h2 id="step-2-install-nginx-on-your-vps">Step 2: Install Nginx on Your VPS</h2>
+<p>Now, let's install and set up Nginx on your VPS.</p>
+<p><strong>1. Install Nginx</strong>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>-y
 </code></pre></div>
-<p><strong>Tip:</strong> Always use <code>--org</code> and <code>--platforms</code> when creating a new project.</p>
-<h2 id="2-firebase-configuration">2. Firebase Configuration</h2>
-<ol>
-<li>Run <code>flutterfire configure</code> to create a new project on Firebase.</li>
-<li>Add Firebase plugins:
-   <div class="highlight"><pre><span></span><code>flutter<span class="w"> </span>pub<span class="w"> </span>add<span class="w"> </span>firebase_plugin_name1<span class="w"> </span>firebase_plugin_name2<span class="w"> </span>...
+<p><strong>2. Start and Enable Nginx</strong>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nginx
+</code></pre></div>
+<p>This ensures Nginx starts automatically on system boot.</p>
+<h2 id="step-3-configure-nginx-as-a-reverse-proxy-for-strapi">Step 3: Configure Nginx as a Reverse Proxy for Strapi</h2>
+<p>Next, we'll configure Nginx to act as a reverse proxy for your Strapi application.</p>
+<p><strong>1. Create Nginx Configuration for Strapi</strong>:
+Create a new configuration file:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/nginx/sites-available/strapi.conf
+</code></pre></div>
+<p>Add the following configuration (replace <code>encyclopedia-cms.initiatehub.com</code> with your subdomain):</p>
+<div class="highlight"><pre><span></span><code><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">encyclopedia-cms.initiatehub.com</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:1337</span><span class="p">;</span><span class="w">  </span><span class="c1"># Strapi&#39;s internal port</span>
+<span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">&#39;upgrade&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_cache_bypass</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>2. Enable the Nginx Configuration</strong>:</p>
+<ul>
+<li>Link the configuration file to <code>sites-enabled</code>:
+  <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/strapi.conf<span class="w"> </span>/etc/nginx/sites-enabled/
 </code></pre></div></li>
-<li>Run <code>flutterfire configure</code> again after adding all plugins.</li>
-</ol>
-<h2 id="3-android-setup">3. Android Setup</h2>
-<h3 id="update-appbuildgradle">Update app/build.gradle</h3>
-<p>Add these dependencies:</p>
-<div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="c1">// Import the Firebase BoM</span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="n">platform</span><span class="o">(</span><span class="s1">&#39;com.google.firebase:firebase-bom:33.2.0&#39;</span><span class="o">)</span>
-
-<span class="w">    </span><span class="c1">// Add the dependencies for Firebase products</span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.google.firebase:firebase-auth&#39;</span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.google.firebase:firebase-firestore&#39;</span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.google.firebase:firebase-storage&#39;</span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.google.firebase:firebase-analytics&#39;</span>
-
-<span class="w">    </span><span class="c1">// For Google Sign-In</span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.google.android.gms:play-services-auth:20.7.0&#39;</span>
-
-<span class="w">    </span><span class="c1">// Add other Firebase products as needed</span>
-<span class="o">}</span>
+<li>Test Nginx configuration for syntax errors:
+  <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
+</code></pre></div></li>
+<li>Restart Nginx to apply the changes:
+  <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx
+</code></pre></div></li>
+</ul>
+<h2 id="step-4-obtain-an-ssl-certificate-with-certbot-lets-encrypt">Step 4: Obtain an SSL Certificate with Certbot (Let's Encrypt)</h2>
+<p>Now, we'll secure our site with an SSL certificate using Let's Encrypt and Certbot.</p>
+<p><strong>1. Install Certbot and the Nginx Plugin</strong>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-nginx<span class="w"> </span>-y
 </code></pre></div>
-<p>Sync the gradle in Android Studio after adding dependencies.</p>
-<h2 id="4-firebase-console-setup">4. Firebase Console Setup</h2>
-<ol>
-<li>Enable password signin and Google sign-in providers.</li>
-<li>Add SHA1 and SHA256 keys for Google Sign-In.</li>
-</ol>
-<h3 id="generate-release-keystore">Generate Release Keystore</h3>
-<p>In the android folder, run:</p>
-<div class="highlight"><pre><span></span><code>keytool<span class="w"> </span>-genkey<span class="w"> </span>-v<span class="w"> </span>-keystore<span class="w"> </span>encyclopedia-release-key.jks<span class="w"> </span>-keyalg<span class="w"> </span>RSA<span class="w"> </span>-keysize<span class="w"> </span><span class="m">2048</span><span class="w"> </span>-validity<span class="w"> </span><span class="m">10000</span><span class="w"> </span>-alias<span class="w"> </span>encyclopedia
+<p><strong>2. Obtain and Install the SSL Certificate</strong>:</p>
+<p>Run Certbot for your domain:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx<span class="w"> </span>-d<span class="w"> </span>encyclopedia-cms.initiatehub.com
 </code></pre></div>
-<h3 id="configure-release-keystore">Configure Release Keystore</h3>
-<p>In app/build.gradle:</p>
-<div class="highlight"><pre><span></span><code><span class="n">android</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="o">...</span>
-<span class="w">    </span><span class="n">signingConfigs</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">release</span><span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="n">keyAlias</span><span class="w"> </span><span class="s1">&#39;com.initiatehub.encyclopedia&#39;</span>
-<span class="w">            </span><span class="n">keyPassword</span><span class="w"> </span><span class="s1">&#39;your-key-password&#39;</span>
-<span class="w">            </span><span class="n">storeFile</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="s1">&#39;encyclopedia-release-key.jks&#39;</span><span class="o">)</span>
-<span class="w">            </span><span class="n">storePassword</span><span class="w"> </span><span class="s1">&#39;your-keystore-password&#39;</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="w">    </span><span class="n">buildTypes</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">release</span><span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="n">signingConfig</span><span class="w"> </span><span class="n">signingConfigs</span><span class="o">.</span><span class="na">release</span>
-<span class="w">            </span><span class="n">minifyEnabled</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">            </span><span class="n">shrinkResources</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="o">}</span>
+<p>Follow the prompts:</p>
+<ul>
+<li>Agree to the terms of service.</li>
+<li>Choose whether to share your email with the Electronic Frontier Foundation (optional).</li>
+<li>Certbot will automatically configure Nginx to use the SSL certificate.</li>
+<li>When asked, select the option to redirect all HTTP traffic to HTTPS.</li>
+</ul>
+<p><strong>3. Verify SSL Setup</strong>:</p>
+<ul>
+<li>Visit <code>https://encyclopedia-cms.initiatehub.com</code> in your browser to ensure the SSL certificate is working correctly.</li>
+<li>Check the SSL certificate status:
+  <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>certbot<span class="w"> </span>certificates
+</code></pre></div></li>
+</ul>
+<h2 id="step-5-set-up-automatic-renewal-of-ssl-certificate">Step 5: Set Up Automatic Renewal of SSL Certificate</h2>
+<p>Let's Encrypt certificates are valid for 90 days. It's important to set up automatic renewal to maintain HTTPS security.</p>
+<p><strong>Verify Automatic Renewal</strong>:</p>
+<p>Certbot typically sets up a cron job for automatic renewal. You can test the renewal process with:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>certbot<span class="w"> </span>renew<span class="w"> </span>--dry-run
 </code></pre></div>
-<h3 id="get-signing-report">Get Signing Report</h3>
-<p>Run in the android folder:</p>
-<div class="highlight"><pre><span></span><code>./gradlew<span class="w"> </span>signingReport
-</code></pre></div>
-<p>Add both debug and release SHA1 and SHA256 to Firebase console project settings.</p>
-<h2 id="5-final-steps">5. Final Steps</h2>
-<ol>
-<li>Run <code>flutterfire configure</code> again to pull all Firebase config changes.</li>
-<li>Copy all auth feature code to the new project.</li>
-</ol>
-<p><strong>Note:</strong> If prompted to upgrade Kotlin version during gradle sync, follow the system instructions.</p>
+<p>If successful, your certificates will automatically renew when needed.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>You have now successfully set up Nginx as a reverse proxy for your Strapi application, with SSL encryption on your subdomain <code>encyclopedia-cms.initiatehub.com</code>. The SSL certificate is managed by Certbot, which automatically configures Nginx to handle secure HTTPS connections.</p>
+<p>Remember to keep your server updated and monitor your SSL certificate status regularly. If you encounter any issues or need to make changes to your Nginx configuration, you can edit the <code>/etc/nginx/sites-available/strapi.conf</code> file and restart Nginx to apply the changes.</p>
 
 
 
