@@ -260,3 +260,54 @@ docker-compose logs -f
 **Access Strapi:**
 
 Open your browser and go to `http://your_vps_ip:1337/admin` to access the Strapi admin panel.
+
+## **Switching to Development Mode**
+
+To switch Strapi to development mode for content management, follow these steps:
+
+### 1. Local Machine Updates
+
+**1. Modify the Dockerfile**:
+
+Change the command to run Strapi in development mode:
+
+```dockerfile
+CMD ["npm", "run", "develop"]
+```
+
+**2. Rebuild the Docker Image**:
+
+```bash
+docker build -t initiatehub123/strapi-app:latest .
+```
+
+**3. Push the Updated Image to Docker Hub**:
+
+```bash
+docker push initiatehub123/strapi-app:latest
+```
+
+### 2. VPS Updates
+
+**1. Pull the Updated Image**:
+
+```bash
+docker pull initiatehub123/strapi-app:latest
+```
+
+**2. Update the `.env` File**:
+
+Change `NODE_ENV=production` to `NODE_ENV=development`.
+
+**3. Update `docker-compose.yml`**:
+
+Ensure `NODE_ENV=development` is set under the Strapi service environment variables.
+
+**4. Restart Strapi with Docker Compose**:
+
+```bash
+docker-compose down
+docker-compose up --build -d
+```
+
+Following these steps will successfully switch Strapi to development mode on your VPS for content management.
