@@ -24,6 +24,8 @@ Find guides and references for projects at InitiateHub, including mobile apps, w
 
 - [Project Overview](projects/encyclopedia/index.md)
 - [Features Wall](projects/encyclopedia/features-wall.md)
+- [Categories & Topics](projects/encyclopedia/categories-and-topics.md)
+- [Content Models](projects/encyclopedia/content_models_strapi.md)
 
 ## 🚀 Getting Started
 

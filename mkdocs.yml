@@ -5,6 +5,8 @@ nav:
                   - Encyclopedia:
                             - Overview: projects/encyclopedia/index.md
                             - Features Wall: projects/encyclopedia/features-wall.md
+                            - Categories & Topics: projects/encyclopedia/categories-and-topics.md
+                            - Content Models: projects/encyclopedia/content_models_strapi.md
         - Flutter:
                   - Project Structure: flutter/project-structure.md
                   - New Project with Firebase: flutter/new-project-with-firebase.md

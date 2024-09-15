@@ -681,6 +681,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#switching-to-development-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching to Development Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Switching to Development Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-local-machine-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Local Machine Updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vps-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. VPS Updates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -807,6 +840,39 @@
       Step 6: Deploy Strapi with Docker Compose
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-to-development-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching to Development Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Switching to Development Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-local-machine-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Local Machine Updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vps-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. VPS Updates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -999,6 +1065,32 @@ docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 <p><strong>Access Strapi:</strong></p>
 <p>Open your browser and go to <code>http://your_vps_ip:1337/admin</code> to access the Strapi admin panel.</p>
+<h2 id="switching-to-development-mode"><strong>Switching to Development Mode</strong></h2>
+<p>To switch Strapi to development mode for content management, follow these steps:</p>
+<h3 id="1-local-machine-updates">1. Local Machine Updates</h3>
+<p><strong>1. Modify the Dockerfile</strong>:</p>
+<p>Change the command to run Strapi in development mode:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;npm&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;run&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;develop&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>2. Rebuild the Docker Image</strong>:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>initiatehub123/strapi-app:latest<span class="w"> </span>.
+</code></pre></div>
+<p><strong>3. Push the Updated Image to Docker Hub</strong>:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>push<span class="w"> </span>initiatehub123/strapi-app:latest
+</code></pre></div>
+<h3 id="2-vps-updates">2. VPS Updates</h3>
+<p><strong>1. Pull the Updated Image</strong>:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>initiatehub123/strapi-app:latest
+</code></pre></div>
+<p><strong>2. Update the <code>.env</code> File</strong>:</p>
+<p>Change <code>NODE_ENV=production</code> to <code>NODE_ENV=development</code>.</p>
+<p><strong>3. Update <code>docker-compose.yml</code></strong>:</p>
+<p>Ensure <code>NODE_ENV=development</code> is set under the Strapi service environment variables.</p>
+<p><strong>4. Restart Strapi with Docker Compose</strong>:</p>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down
+docker-compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>-d
+</code></pre></div>
+<p>Following these steps will successfully switch Strapi to development mode on your VPS for content management.</p>
 
 
 
